@@ -29,9 +29,9 @@ export default function EngineN8N() {
           style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}
         >
           <div className="eye">Scale Engine AI</div>
-          <h2 className="ttl">El cerebro detrás de todo.</h2>
+          <h2 className="ttl">The brain behind it all.</h2>
           <p className="sub">
-            Cada workflow automatizado. Cero trabajo manual. Cero leads perdidos.
+            Every workflow automated. Zero manual work. Zero leads lost.
           </p>
         </Reveal>
 
@@ -52,10 +52,10 @@ export default function EngineN8N() {
               <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 10, color: "rgba(40,224,130,.72)", letterSpacing: ".06em" }}>
                   <span className="dot pulse" style={{ background: "#28e082", width: 6, height: 6 }} />
-                  Activo
+                  Active
                 </div>
                 <div style={{ fontSize: 10, color: "rgba(255,255,255,.18)", letterSpacing: ".06em" }}>
-                  12 ejecuciones hoy
+                  12 runs today
                 </div>
               </div>
             </div>

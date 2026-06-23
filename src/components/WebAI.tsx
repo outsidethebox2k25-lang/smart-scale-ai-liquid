@@ -6,15 +6,15 @@ import WBar from "./WBar";
 import ChatAnimation, { type ChatItem } from "./ChatAnimation";
 
 const WIDGET_CHAT: ChatItem[] = [
-  { kind: "outPlain", text: "¡Hey! ¿En qué te puedo ayudar? 👋", t: 0 },
-  { kind: "in", text: "Necesito ayuda con automatizaciones", t: 1100 },
+  { kind: "outPlain", text: "Hey! How can I help you? 👋", t: 0 },
+  { kind: "in", text: "I need help with automations", t: 1100 },
   { kind: "typing", t: 1800 },
-  { kind: "green", text: "Perfecto — agendemos una llamada rápida →", t: 2600 },
-  { kind: "tag", text: "Widget AI · 2 seg", t: 2600 },
-  { kind: "in", text: "¡Claro!", t: 3500 },
+  { kind: "green", text: "Perfect — let's book a quick call →", t: 2600 },
+  { kind: "tag", text: "Widget AI · 2 sec", t: 2600 },
+  { kind: "in", text: "Sure!", t: 3500 },
   { kind: "typing", t: 4100 },
-  { kind: "outPlain", text: "📅 ¡Link de calendario enviado a tu teléfono!", t: 4900 },
-  { kind: "tagw", text: "Widget AI · auto-enviado", t: 4900 },
+  { kind: "outPlain", text: "📅 Calendar link sent to your phone!", t: 4900 },
+  { kind: "tagw", text: "Widget AI · auto-sent", t: 4900 },
 ];
 
 export default function WebAI() {
@@ -35,9 +35,9 @@ export default function WebAI() {
         >
           <div className="eye">Scale Web AI</div>
           <h2 className="ttl">
-            En tu sitio. En tu landing.
+            On your site. On your landing.
             <br />
-            Siempre cerrando.
+            Always closing.
           </h2>
         </Reveal>
 
@@ -48,9 +48,9 @@ export default function WebAI() {
               <div className="cicon">🔮</div>
               <div className="clabel">Scale Widget AI</div>
               <div className="ctitle">
-                En tu sitio.
+                On your site.
                 <br />
-                Siempre activo.
+                Always on.
               </div>
               <ChatAnimation items={WIDGET_CHAT} />
             </div>
@@ -62,13 +62,13 @@ export default function WebAI() {
               <div className="cicon">🚀</div>
               <div className="clabel">Scale Landing AI</div>
               <div className="ctitle">
-                Un sitio que vende
+                A site that sells
                 <br />
-                mientras duermes.
+                while you sleep.
               </div>
               <div style={{ marginTop: 20 }}>
-                <div className="lfield">Tu nombre</div>
-                <div className="lfield">Número de teléfono</div>
+                <div className="lfield">Your name</div>
+                <div className="lfield">Phone number</div>
                 <div
                   style={{
                     background: "rgba(255,255,255,.14)",
@@ -84,12 +84,12 @@ export default function WebAI() {
                     boxShadow: "inset 0 1.5px 0 rgba(255,255,255,.2)",
                   }}
                 >
-                  Quiero mi demo gratis →
+                  Get my free demo →
                 </div>
               </div>
               <div className="cbadge">
                 <span className="dot pulse" style={{ background: "#28e082", width: 7, height: 7 }} />
-                AI agent incluido · Siempre activo
+                AI agent included · Always on
               </div>
             </div>
           </GlassCard>

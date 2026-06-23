@@ -6,14 +6,14 @@ import WBar from "./WBar";
 import ChatAnimation, { type ChatItem } from "./ChatAnimation";
 
 const SMS_CHAT: ChatItem[] = [
-  { kind: "in", text: "Vi tu anuncio. ¿Sigues disponible?", t: 0 },
+  { kind: "in", text: "Saw your ad. Are you still available?", t: 0 },
   { kind: "typing", t: 700 },
-  { kind: "green", text: "¡Hola! Sí — ¿cuál es tu dirección para la cotización?", t: 1500 },
-  { kind: "tag", text: "SMS AI · 3 seg", t: 1500 },
+  { kind: "green", text: "Hey! Yes — what's the address for your quote?", t: 1500 },
+  { kind: "tag", text: "SMS AI · 3 sec", t: 1500 },
   { kind: "in", text: "4821 Maple Ave, Las Vegas", t: 2600 },
   { kind: "typing", t: 3300 },
-  { kind: "green", text: "¡Agendado viernes 9am! Ahí estamos 📅", t: 4100 },
-  { kind: "tag", text: "SMS AI · auto-agendado ✓", t: 4100 },
+  { kind: "green", text: "Booked for Friday 9am! See you there 📅", t: 4100 },
+  { kind: "tag", text: "SMS AI · auto-booked ✓", t: 4100 },
 ];
 
 export default function CrmSms() {
@@ -42,7 +42,7 @@ export default function CrmSms() {
               <div className="wbody">
                 <div className="cicon">🗂</div>
                 <div className="clabel">Scale CRM AI</div>
-                <div className="ctitle">Pipeline en tiempo real.</div>
+                <div className="ctitle">Pipeline in real time.</div>
                 <div>
                   <div className="sr">
                     <span className="sk">
@@ -63,17 +63,17 @@ export default function CrmSms() {
                     <span className="sv">47 leads</span>
                   </div>
                   <div className="sr">
-                    <span className="sk">AI followup</span>
-                    <span className="sv" style={{ color: "rgba(90,200,255,.92)" }}>enviado · hace 2m</span>
+                    <span className="sk">AI follow-up</span>
+                    <span className="sv" style={{ color: "rgba(90,200,255,.92)" }}>sent · 2m ago</span>
                   </div>
                   <div className="sr">
-                    <span className="sk">Agendados hoy</span>
-                    <span className="sv">12 llamadas</span>
+                    <span className="sk">Booked today</span>
+                    <span className="sv">12 calls</span>
                   </div>
                 </div>
                 <div className="cbadge">
                   <span className="dot pulse" style={{ background: "#28e082", width: 7, height: 7 }} />
-                  Live · 0 errores
+                  Live · 0 errors
                 </div>
               </div>
             </GlassCard>
@@ -87,15 +87,15 @@ export default function CrmSms() {
           <div className="copy-col">
             <div className="copy-tag">Scale SMS AI</div>
             <h2 className="copy-h">
-              Responde
+              Reply before
               <br />
-              antes de que
+              they forget
               <br />
-              te olviden.
+              about you.
             </h2>
             <p className="copy-s">
-              3 segundos. Cada lead. Día o noche — tu AI responde, califica y agenda.
-              Tú solo apareces.
+              3 seconds. Every lead. Day or night — your AI replies, qualifies, and
+              books. You just show up.
             </p>
           </div>
           <Reveal delay={0.2}>
@@ -105,9 +105,9 @@ export default function CrmSms() {
                 <div className="cicon">💬</div>
                 <div className="clabel">Scale SMS AI</div>
                 <div className="ctitle">
-                  Auto-responde.
+                  Auto-replies.
                   <br />
-                  Auto-agenda.
+                  Auto-books.
                 </div>
                 <ChatAnimation items={SMS_CHAT} />
               </div>

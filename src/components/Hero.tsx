@@ -17,17 +17,13 @@ export default function Hero() {
       </motion.div>
 
       <motion.h1 className="hero-h" {...up(0.4)}>
-        <em>
-          The AI system
-          <br />
-          that runs
-          <br />
-          your business.
-        </em>
+        The AI system that
+        <br />
+        runs your business.
       </motion.h1>
 
       <motion.p className="hero-sub" {...up(0.6)}>
-        AI agents that capture, qualify and close — while you work.
+        AI agents that capture, qualify, and close — while you work.
       </motion.p>
 
       <motion.div className="hero-btns" {...up(0.8)}>
