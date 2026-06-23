@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 type Node = {
   id: string;
@@ -20,6 +20,12 @@ type Node = {
   portOut: boolean;
   labelWeight?: number;
 };
+
+// design coordinate space — the whole stage is scaled to fit the container
+const STAGE_W = 1120;
+const STAGE_H = 460;
+const NODE_CX = 102; // approx half node width (for exec-ring centering)
+const NODE_CY = 36; // approx half node height
 
 const NODES: Node[] = [
   { id: "nn1", left: 60, top: 76, nc: "rgba(249,199,79,.18)", bc: "rgba(249,199,79,.5)", gc: "rgba(249,199,79,.4)", icon: "⚡", label: "Trigger", labelColor: "rgba(249,199,79,.8)", title: "Lead entra", sub: "Meta Ads · Google Ads", portIn: false, portOut: true },
@@ -55,6 +61,21 @@ const PATH_COLORS: Record<string, string> = {
 export default function N8NCanvas() {
   const canvasRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
+  const [scale, setScale] = useState(1);
+
+  // Fit the full workflow into the container width (scaled down on mobile).
+  useEffect(() => {
+    const el = canvasRef.current;
+    if (!el) return;
+    const measure = () => {
+      const w = el.clientWidth;
+      setScale(Math.min(1, w / STAGE_W));
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -78,20 +99,16 @@ export default function N8NCanvas() {
 
     const runExecution = () => {
       if (cancelled) return;
-      const order = NODES.map((n) => n.id);
-      order.forEach((id, i) => {
+      NODES.forEach((n, i) => {
         timers.push(
           setTimeout(() => {
-            const node = document.getElementById(id);
+            const node = document.getElementById(n.id);
             if (!node) return;
             node.classList.add("n8n-active");
-            const rect = node.getBoundingClientRect();
-            const cr = canvas.getBoundingClientRect();
-            const cx = rect.left - cr.left + rect.width / 2;
-            const cy = rect.top - cr.top + rect.height / 2;
+            // exec ring in design coordinates (stage handles the scaling)
             const ring = document.createElementNS(SVGNS, "circle");
-            ring.setAttribute("cx", String(cx));
-            ring.setAttribute("cy", String(cy));
+            ring.setAttribute("cx", String(n.left + NODE_CX));
+            ring.setAttribute("cy", String(n.top + NODE_CY));
             ring.setAttribute("r", "8");
             ring.setAttribute("fill", "none");
             ring.setAttribute("stroke", "rgba(255,255,255,.6)");
@@ -103,7 +120,7 @@ export default function N8NCanvas() {
           }, i * 320)
         );
       });
-      timers.push(setTimeout(runExecution, order.length * 320 + 2200));
+      timers.push(setTimeout(runExecution, NODES.length * 320 + 2200));
     };
 
     const spawnPacket = () => {
@@ -159,73 +176,107 @@ export default function N8NCanvas() {
   return (
     <div
       ref={canvasRef}
-      style={{ position: "relative", width: "100%", height: 520, overflow: "hidden", background: "rgba(0,0,0,.22)" }}
+      style={{
+        position: "relative",
+        width: "100%",
+        height: STAGE_H * scale + (scale < 0.5 ? 44 : 0),
+        overflow: "hidden",
+        background:
+          "radial-gradient(ellipse 70% 90% at 50% 0%, rgba(40,120,150,.10), transparent 70%), rgba(0,0,0,.24)",
+        transition: "height .3s ease",
+      }}
     >
-      <svg
-        ref={svgRef}
-        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 2, overflow: "visible" }}
+      {/* premium dotted grid */}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, rgba(255,255,255,.06) 1px, transparent 0)",
+          backgroundSize: "26px 26px",
+          maskImage: "radial-gradient(ellipse 85% 75% at 50% 45%, #000 50%, transparent 100%)",
+          WebkitMaskImage: "radial-gradient(ellipse 85% 75% at 50% 45%, #000 50%, transparent 100%)",
+        }}
+      />
+
+      {/* scaled stage — design space STAGE_W × STAGE_H */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: "50%",
+          width: STAGE_W,
+          height: STAGE_H,
+          transform: `translateX(-50%) scale(${scale})`,
+          transformOrigin: "top center",
+        }}
       >
-        <defs>
-          <marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-            <path d="M0,0 L0,8 L8,4 z" fill="rgba(255,255,255,.28)" />
-          </marker>
-          <filter id="gf" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="3" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-        {PATHS.map((p) => (
-          <path
-            key={p.id}
-            id={p.id}
-            className="wf-path-anim"
-            d={p.d}
-            stroke={p.stroke}
-            strokeWidth={p.id === "p10" ? 1 : 1.5}
-            fill="none"
-            strokeDasharray={p.dash}
-          />
-        ))}
-      </svg>
-
-      {NODES.map((n) => (
-        <div
-          key={n.id}
-          id={n.id}
-          className="n8n-node"
-          style={{
-            left: n.left,
-            top: n.top,
-            ["--nc" as string]: n.nc,
-            ["--bc" as string]: n.bc,
-            ["--gc" as string]: n.gc,
-            opacity: 0,
-            transform: "translateY(12px) scale(.96)",
-            transition:
-              "opacity .5s ease, transform .5s cubic-bezier(.2,0,.2,1), box-shadow .3s ease",
-          } as CSSProperties}
+        <svg
+          ref={svgRef}
+          width={STAGE_W}
+          height={STAGE_H}
+          style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 2, overflow: "visible" }}
         >
-          {n.portIn && <div className="nn-port nn-port-in" />}
-          <div className="nn-icon">{n.icon}</div>
-          <div className="nn-body">
-            <div className="nn-label" style={{ color: n.labelColor, fontWeight: n.labelWeight }}>
-              {n.label}
-            </div>
-            <div className="nn-title" style={n.titleColor ? { color: n.titleColor } : undefined}>
-              {n.title}
-            </div>
-            <div className="nn-sub" style={n.subColor ? { color: n.subColor } : undefined}>
-              {n.sub}
-            </div>
-          </div>
-          {n.portOut && <div className="nn-port nn-port-out" />}
-        </div>
-      ))}
+          <defs>
+            <marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+              <path d="M0,0 L0,8 L8,4 z" fill="rgba(255,255,255,.28)" />
+            </marker>
+            <filter id="gf" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+          {PATHS.map((p) => (
+            <path
+              key={p.id}
+              id={p.id}
+              className="wf-path-anim"
+              d={p.d}
+              stroke={p.stroke}
+              strokeWidth={p.id === "p10" ? 1 : 1.5}
+              fill="none"
+              strokeDasharray={p.dash}
+            />
+          ))}
+        </svg>
 
-      <div style={{ position: "absolute", bottom: 20, left: 24, display: "flex", alignItems: "center", gap: 20, zIndex: 10 }}>
+        {NODES.map((n) => (
+          <div
+            key={n.id}
+            id={n.id}
+            className="n8n-node"
+            style={{
+              left: n.left,
+              top: n.top,
+              ["--nc" as string]: n.nc,
+              ["--bc" as string]: n.bc,
+              ["--gc" as string]: n.gc,
+            } as CSSProperties}
+          >
+            {n.portIn && <div className="nn-port nn-port-in" />}
+            <div className="nn-icon">{n.icon}</div>
+            <div className="nn-body">
+              <div className="nn-label" style={{ color: n.labelColor, fontWeight: n.labelWeight }}>
+                {n.label}
+              </div>
+              <div className="nn-title" style={n.titleColor ? { color: n.titleColor } : undefined}>
+                {n.title}
+              </div>
+              <div className="nn-sub" style={n.subColor ? { color: n.subColor } : undefined}>
+                {n.sub}
+              </div>
+            </div>
+            {n.portOut && <div className="nn-port nn-port-out" />}
+          </div>
+        ))}
+      </div>
+
+      {/* status bar — fixed to the container (not scaled) so it stays legible */}
+      <div style={{ position: "absolute", bottom: 16, left: 16, display: "flex", alignItems: "center", gap: 12, zIndex: 10, flexWrap: "wrap" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 6, background: "rgba(0,0,0,.4)", border: ".5px solid rgba(255,255,255,.08)", borderRadius: 20, padding: "6px 14px", backdropFilter: "blur(12px)" }}>
           <span className="dot pulse" style={{ background: "#28e082", width: 6, height: 6 }} />
           <span style={{ fontSize: 10, color: "rgba(255,255,255,.35)", letterSpacing: ".06em" }}>Corriendo · 0 errores</span>

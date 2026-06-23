@@ -8,7 +8,7 @@ import Reveal from "./Reveal";
 const N8NCanvas = dynamic(() => import("./N8NCanvas"), {
   ssr: false,
   loading: () => (
-    <div style={{ width: "100%", height: 520, background: "rgba(0,0,0,.22)" }} />
+    <div style={{ width: "100%", height: 240, background: "rgba(0,0,0,.22)" }} />
   ),
 });
 
