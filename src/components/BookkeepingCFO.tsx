@@ -101,7 +101,7 @@ export default function BookkeepingCFO() {
 
           {/* Wide — Khalifah */}
           <GlassCard className="bk-wide" mesh="linear-gradient(140deg,rgba(20,180,160,.22),rgba(20,40,120,.35) 50%,rgba(100,20,200,.2))">
-            <div className="wbody" style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", gap: 48, alignItems: "center" }}>
+            <div className="wbody kh-grid">
               <div>
                 <div className="khalifah-card">
                   <div className="kh-avatar">🤝</div>
@@ -120,8 +120,8 @@ export default function BookkeepingCFO() {
                   ))}
                 </div>
               </div>
-              <div style={{ width: ".5px", height: 180, background: "linear-gradient(180deg,transparent,rgba(255,255,255,.14),transparent)" }} />
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }}>
+              <div className="kh-divider" />
+              <div className="kh-kpis">
                 {KPIS.map((k) => (
                   <div className="bk-stat" key={k.l}>
                     <div className="bk-num" style={k.c ? { color: k.c } : undefined}>{k.n}</div>
