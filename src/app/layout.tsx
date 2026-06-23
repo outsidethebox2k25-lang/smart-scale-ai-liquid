@@ -10,13 +10,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Smart Scale AI — The AI system that runs your business",
+  title: "Smart Scale AI — El sistema de IA que opera tu negocio",
   description:
-    "AI agents that capture, qualify and close — while you work. CRM, SMS, FB/IG, Web, Bookkeeping & CFO automation for contractors in the USA.",
+    "Agentes de IA que captan, califican y cierran — mientras tú trabajas. Automatización de CRM, SMS, FB/IG, Web, Contabilidad y CFO para contratistas en USA.",
   metadataBase: new URL("https://smart-scale-ai-liquid.vercel.app"),
   openGraph: {
     title: "Smart Scale AI",
-    description: "The AI system that runs your business.",
+    description: "El sistema de IA que opera tu negocio.",
     type: "website",
   },
 };

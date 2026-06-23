@@ -5,12 +5,12 @@ export default function FinalCTA() {
   return (
     <section id="contact">
       <Reveal style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 30, maxWidth: 720, textAlign: "center" }}>
-        <div className="eye">Ready?</div>
+        <div className="eye">¿Listo?</div>
         <h2 style={{ fontSize: "clamp(52px,7vw,100px)", fontWeight: 900, letterSpacing: "-.045em", lineHeight: 1, textAlign: "center" }}>
-          Scale smarter.
+          Escala más inteligente.
         </h2>
         <p className="sub">
-          See the demo free. Like it? We set it up. Don&apos;t? You pay nothing.
+          Ve el demo gratis. ¿Te gusta? Lo configuramos. ¿No te gusta? No pagas nada.
         </p>
 
         <GlassCard
@@ -18,9 +18,9 @@ export default function FinalCTA() {
           mesh="linear-gradient(138deg,rgba(0,215,185,.18),rgba(20,50,160,.28) 52%,rgba(140,30,200,.18))"
           bodyStyle={{ padding: "36px 40px", display: "flex", flexDirection: "column", gap: 10 }}
         >
-          <div className="lfield">Your name</div>
-          <div className="lfield">Phone number</div>
-          <div className="lfield">Business type (roofing, flooring, remodeling...)</div>
+          <div className="lfield">Tu nombre</div>
+          <div className="lfield">Número de teléfono</div>
+          <div className="lfield">Tipo de negocio (techos, pisos, remodelación...)</div>
           <div
             style={{
               background: "rgba(255,255,255,.12)",
@@ -37,10 +37,10 @@ export default function FinalCTA() {
               marginTop: 6,
             }}
           >
-            Get my free demo →
+            Quiero mi demo gratis →
           </div>
           <div style={{ textAlign: "center", fontSize: 11, color: "rgba(255,255,255,.2)", letterSpacing: ".06em", marginTop: 4 }}>
-            NO RISK · NO COMMITMENT · YOU SEE IT FIRST
+            SIN RIESGO · SIN COMPROMISO · LO VES PRIMERO
           </div>
         </GlassCard>
 

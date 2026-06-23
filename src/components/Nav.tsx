@@ -16,12 +16,12 @@ export default function Nav() {
         </div>
       </div>
       <div className="nav-links">
-        <a href="#product">Product</a>
-        <a href="#how">How it works</a>
-        <a href="#contact">Contact</a>
+        <a href="#product">Producto</a>
+        <a href="#how">Cómo funciona</a>
+        <a href="#contact">Contacto</a>
       </div>
       <a href="#contact" className="nav-cta">
-        Book a demo →
+        Agenda una demo →
       </a>
     </nav>
   );

@@ -34,7 +34,7 @@ export default function Home() {
       <PremiumAddon />
       <FinalCTA />
       <footer>
-        <p>© 2026 Smart Scale AI · All rights reserved</p>
+        <p>© 2026 Smart Scale AI · Todos los derechos reservados</p>
       </footer>
     </>
   );

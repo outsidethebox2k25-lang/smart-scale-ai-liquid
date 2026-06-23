@@ -3,27 +3,27 @@ import Reveal from "./Reveal";
 import WBar from "./WBar";
 
 const LEDGER = [
-  { k: "Revenue (Oct)", v: "$48,200.00", cls: "green" },
-  { k: "Expenses", v: "- $12,640.00", cls: "red" },
-  { k: "Net profit", v: "$35,560.00", cls: "green" },
-  { k: "Tax estimate", v: "$8,890.00", cls: "blue" },
-  { k: "Reconciled", v: "✓ All accounts", cls: "" },
+  { k: "Ingresos (Oct)", v: "$48,200.00", cls: "green" },
+  { k: "Gastos", v: "- $12,640.00", cls: "red" },
+  { k: "Ganancia neta", v: "$35,560.00", cls: "green" },
+  { k: "Estimado de impuestos", v: "$8,890.00", cls: "blue" },
+  { k: "Conciliado", v: "✓ Todas las cuentas", cls: "" },
 ];
 
 const CFO = [
-  { icon: "📈", t: "P&L Analysis", s: "Monthly review — where you make money and where you lose it" },
-  { icon: "🎯", t: "Cash Flow Forecast", s: "90-day visibility — never get caught off guard" },
-  { icon: "⚡", t: "Growth Decisions", s: "Hire, invest, expand — backed by real data" },
-  { icon: "🌎", t: "Global. Any business.", s: "USA, Mexico, LATAM — we speak your numbers" },
+  { icon: "📈", t: "Análisis P&L", s: "Revisión mensual — dónde ganas y dónde pierdes dinero" },
+  { icon: "🎯", t: "Forecast de Cash Flow", s: "Visibilidad a 90 días — nunca te sorprendas" },
+  { icon: "⚡", t: "Decisiones de Crecimiento", s: "Contratar, invertir, expandir — respaldado por datos" },
+  { icon: "🌎", t: "Global. Cualquier negocio.", s: "USA, México, LATAM — hablamos tus números" },
 ];
 
-const PILLS = ["📋 Monthly Reports", "💰 Tax-ready", "🏦 Bank Reconciliation", "📊 P&L Statements", "🌎 Bilingual"];
+const PILLS = ["📋 Reportes Mensuales", "💰 Listo para impuestos", "🏦 Conciliación bancaria", "📊 Estados P&L", "🌎 Bilingüe"];
 
 const KPIS = [
-  { n: "100%", l: "IRS Compliant", c: "rgba(40,210,140,.9)" },
-  { n: "24h", l: "Report delivery" },
-  { n: "$0", l: "Tax surprises", c: "rgba(90,200,255,.9)" },
-  { n: "USA+", l: "Global coverage" },
+  { n: "100%", l: "Cumple con IRS", c: "rgba(40,210,140,.9)" },
+  { n: "24h", l: "Entrega de reportes" },
+  { n: "$0", l: "Sorpresas fiscales", c: "rgba(90,200,255,.9)" },
+  { n: "USA+", l: "Cobertura global" },
 ];
 
 export default function BookkeepingCFO() {
@@ -33,29 +33,29 @@ export default function BookkeepingCFO() {
         <Reveal style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
           <div className="eye">Scale Books AI</div>
           <h2 className="ttl">
-            Your numbers.
+            Tus números.
             <br />
-            Always clean.
+            Siempre limpios.
             <br />
-            Always accurate.
+            Siempre exactos.
           </h2>
           <p className="sub">
-            Bookkeeping for U.S. businesses. CFO strategy for the world. While you focus
-            on the work.
+            Contabilidad para negocios en USA. Estrategia CFO para el mundo. Mientras tú
+            te enfocas en el trabajo.
           </p>
         </Reveal>
 
         <Reveal className="bk-grid" delay={0.1}>
-          {/* Bookkeeping */}
+          {/* Contabilidad */}
           <GlassCard mesh="linear-gradient(140deg,rgba(40,210,140,.68),rgba(20,100,80,.78) 52%,rgba(10,60,180,.55))">
-            <WBar title="Scale Books — USA Bookkeeping" />
+            <WBar title="Scale Books — Contabilidad USA" />
             <div className="wbody">
               <div className="cicon">📊</div>
               <div className="clabel">Scale Books AI</div>
               <div className="ctitle">
-                Books ready.
+                Libros listos.
                 <br />
-                Every month.
+                Cada mes.
               </div>
               <div style={{ marginTop: 18 }}>
                 {LEDGER.map((r) => (
@@ -69,21 +69,21 @@ export default function BookkeepingCFO() {
               </div>
               <div className="cbadge" style={{ marginTop: 20 }}>
                 <span className="dot pulse" style={{ background: "#28e082", width: 7, height: 7 }} />
-                Reconciled · IRS-ready
+                Conciliado · Listo para IRS
               </div>
             </div>
           </GlassCard>
 
           {/* CFO */}
           <GlassCard mesh="linear-gradient(140deg,rgba(90,140,255,.65),rgba(40,20,180,.78) 52%,rgba(140,40,220,.55))">
-            <WBar title="Scale CFO — Global Strategy" />
+            <WBar title="Scale CFO — Estrategia Global" />
             <div className="wbody">
               <div className="cicon">🧭</div>
               <div className="clabel">Scale CFO Services</div>
               <div className="ctitle">
-                Your numbers
+                Tus números
                 <br />
-                as strategy.
+                como estrategia.
               </div>
               <div style={{ marginTop: 18 }}>
                 {CFO.map((c, i) => (
@@ -108,11 +108,11 @@ export default function BookkeepingCFO() {
                   <div>
                     <div className="kh-name">Khalifah</div>
                     <div className="kh-role">Head of Bookkeeping &amp; CFO Stack</div>
-                    <div className="kh-badge">Certified · USA + Global</div>
+                    <div className="kh-badge">Certificado · USA + Global</div>
                   </div>
                 </div>
                 <div style={{ marginTop: 16, fontSize: 13, fontWeight: 300, color: "rgba(255,255,255,.45)", lineHeight: 1.7 }}>
-                  &quot;Your books should tell you where to go — not just where you&apos;ve been.&quot;
+                  &quot;Tus libros deben decirte hacia dónde ir — no solo dónde has estado.&quot;
                 </div>
                 <div style={{ marginTop: 18, display: "flex", flexWrap: "wrap" }}>
                   {PILLS.map((p) => (

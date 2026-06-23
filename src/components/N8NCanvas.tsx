@@ -22,15 +22,15 @@ type Node = {
 };
 
 const NODES: Node[] = [
-  { id: "nn1", left: 60, top: 76, nc: "rgba(249,199,79,.18)", bc: "rgba(249,199,79,.5)", gc: "rgba(249,199,79,.4)", icon: "⚡", label: "Trigger", labelColor: "rgba(249,199,79,.8)", title: "Lead comes in", sub: "Meta Ads · Google Ads", portIn: false, portOut: true },
-  { id: "nn2", left: 268, top: 76, nc: "rgba(90,200,250,.18)", bc: "rgba(90,200,250,.5)", gc: "rgba(90,200,250,.4)", icon: "🗂", label: "CRM", labelColor: "rgba(90,200,250,.8)", title: "Scale CRM AI", sub: "Add to pipeline", portIn: true, portOut: true },
-  { id: "nn3", left: 476, top: 76, nc: "rgba(37,211,102,.18)", bc: "rgba(37,211,102,.5)", gc: "rgba(37,211,102,.4)", icon: "💬", label: "Messaging", labelColor: "rgba(37,211,102,.8)", title: "Scale SMS AI", sub: "Replies in 3 seconds", portIn: true, portOut: true },
-  { id: "nn4", left: 684, top: 76, nc: "rgba(191,122,240,.18)", bc: "rgba(191,122,240,.5)", gc: "rgba(191,122,240,.4)", icon: "🤖", label: "AI", labelColor: "rgba(191,122,240,.8)", title: "Claude AI", sub: "Qualifies & scores lead", portIn: true, portOut: true },
-  { id: "nn5", left: 892, top: 76, nc: "rgba(255,200,60,.18)", bc: "rgba(255,200,60,.5)", gc: "rgba(255,200,60,.4)", icon: "🔀", label: "Router", labelColor: "rgba(255,200,60,.8)", title: "IF Node", sub: "Hot / Cold / Follow-up", portIn: true, portOut: true },
-  { id: "nn6", left: 268, top: 296, nc: "rgba(255,100,50,.18)", bc: "rgba(255,100,50,.5)", gc: "rgba(255,100,50,.4)", icon: "🧠", label: "AI Score", labelColor: "rgba(255,100,50,.8)", title: "Lead Score", sub: "Priority ranking", portIn: true, portOut: true },
-  { id: "nn7", left: 476, top: 296, nc: "rgba(240,180,40,.18)", bc: "rgba(240,180,40,.5)", gc: "rgba(240,180,40,.4)", icon: "📅", label: "Calendar", labelColor: "rgba(240,180,40,.8)", title: "Auto-Book", sub: "Schedules the appointment", portIn: true, portOut: true },
-  { id: "nn8", left: 684, top: 296, nc: "rgba(37,211,102,.18)", bc: "rgba(37,211,102,.5)", gc: "rgba(37,211,102,.4)", icon: "✅", label: "Notify", labelColor: "rgba(37,211,102,.8)", title: "Confirm", sub: "SMS + Email sent", portIn: true, portOut: true },
-  { id: "nn9", left: 892, top: 296, nc: "rgba(37,211,102,.28)", bc: "rgba(37,211,102,.7)", gc: "rgba(37,211,102,.6)", icon: "🏆", label: "Closed", labelColor: "rgba(37,211,102,.9)", labelWeight: 700, title: "Deal Won", titleColor: "rgba(37,211,102,.9)", sub: "Revenue logged", subColor: "rgba(37,211,102,.5)", portIn: true, portOut: false },
+  { id: "nn1", left: 60, top: 76, nc: "rgba(249,199,79,.18)", bc: "rgba(249,199,79,.5)", gc: "rgba(249,199,79,.4)", icon: "⚡", label: "Trigger", labelColor: "rgba(249,199,79,.8)", title: "Lead entra", sub: "Meta Ads · Google Ads", portIn: false, portOut: true },
+  { id: "nn2", left: 268, top: 76, nc: "rgba(90,200,250,.18)", bc: "rgba(90,200,250,.5)", gc: "rgba(90,200,250,.4)", icon: "🗂", label: "CRM", labelColor: "rgba(90,200,250,.8)", title: "Scale CRM AI", sub: "Agregar al pipeline", portIn: true, portOut: true },
+  { id: "nn3", left: 476, top: 76, nc: "rgba(37,211,102,.18)", bc: "rgba(37,211,102,.5)", gc: "rgba(37,211,102,.4)", icon: "💬", label: "Mensajería", labelColor: "rgba(37,211,102,.8)", title: "Scale SMS AI", sub: "Responde en 3 segundos", portIn: true, portOut: true },
+  { id: "nn4", left: 684, top: 76, nc: "rgba(191,122,240,.18)", bc: "rgba(191,122,240,.5)", gc: "rgba(191,122,240,.4)", icon: "🤖", label: "IA", labelColor: "rgba(191,122,240,.8)", title: "Claude AI", sub: "Califica y puntúa el lead", portIn: true, portOut: true },
+  { id: "nn5", left: 892, top: 76, nc: "rgba(255,200,60,.18)", bc: "rgba(255,200,60,.5)", gc: "rgba(255,200,60,.4)", icon: "🔀", label: "Router", labelColor: "rgba(255,200,60,.8)", title: "IF Node", sub: "Caliente / Frío / Seguimiento", portIn: true, portOut: true },
+  { id: "nn6", left: 268, top: 296, nc: "rgba(255,100,50,.18)", bc: "rgba(255,100,50,.5)", gc: "rgba(255,100,50,.4)", icon: "🧠", label: "IA Score", labelColor: "rgba(255,100,50,.8)", title: "Lead Score", sub: "Ranking de prioridad", portIn: true, portOut: true },
+  { id: "nn7", left: 476, top: 296, nc: "rgba(240,180,40,.18)", bc: "rgba(240,180,40,.5)", gc: "rgba(240,180,40,.4)", icon: "📅", label: "Calendario", labelColor: "rgba(240,180,40,.8)", title: "Auto-Agenda", sub: "Programa la cita", portIn: true, portOut: true },
+  { id: "nn8", left: 684, top: 296, nc: "rgba(37,211,102,.18)", bc: "rgba(37,211,102,.5)", gc: "rgba(37,211,102,.4)", icon: "✅", label: "Notificar", labelColor: "rgba(37,211,102,.8)", title: "Confirmar", sub: "SMS + Email enviados", portIn: true, portOut: true },
+  { id: "nn9", left: 892, top: 296, nc: "rgba(37,211,102,.28)", bc: "rgba(37,211,102,.7)", gc: "rgba(37,211,102,.6)", icon: "🏆", label: "Cerrado", labelColor: "rgba(37,211,102,.9)", labelWeight: 700, title: "Deal Ganado", titleColor: "rgba(37,211,102,.9)", sub: "Ingreso registrado", subColor: "rgba(37,211,102,.5)", portIn: true, portOut: false },
 ];
 
 const PATHS: { id: string; d: string; stroke: string; dash: string }[] = [
@@ -228,11 +228,11 @@ export default function N8NCanvas() {
       <div style={{ position: "absolute", bottom: 20, left: 24, display: "flex", alignItems: "center", gap: 20, zIndex: 10 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 6, background: "rgba(0,0,0,.4)", border: ".5px solid rgba(255,255,255,.08)", borderRadius: 20, padding: "6px 14px", backdropFilter: "blur(12px)" }}>
           <span className="dot pulse" style={{ background: "#28e082", width: 6, height: 6 }} />
-          <span style={{ fontSize: 10, color: "rgba(255,255,255,.35)", letterSpacing: ".06em" }}>Running · 0 errors</span>
+          <span style={{ fontSize: 10, color: "rgba(255,255,255,.35)", letterSpacing: ".06em" }}>Corriendo · 0 errores</span>
         </div>
         <div style={{ background: "rgba(0,0,0,.4)", border: ".5px solid rgba(255,255,255,.08)", borderRadius: 20, padding: "6px 14px", backdropFilter: "blur(12px)" }}>
           <span style={{ fontSize: 10, color: "rgba(255,255,255,.3)", letterSpacing: ".06em" }}>
-            Last run: <span style={{ color: "rgba(40,224,130,.7)" }}>2s ago</span>
+            Última ejecución: <span style={{ color: "rgba(40,224,130,.7)" }}>hace 2s</span>
           </span>
         </div>
       </div>

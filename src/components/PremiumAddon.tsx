@@ -2,12 +2,12 @@ import GlassCard from "./GlassCard";
 import Reveal from "./Reveal";
 
 const FEATURES = [
-  { icon: "🎨", t: "Premium Design", s: "Built for your brand. Mobile-first. Fast. Designed to convert." },
-  { icon: "🤖", t: "AI Agent Included", s: "Replies to every lead in 3 seconds. Qualifies. Books. 24/7." },
-  { icon: "⚡", t: "Live in 24 Hours", s: "You give the info. We build. Your AI goes live tomorrow." },
+  { icon: "🎨", t: "Diseño Premium", s: "Construido para tu marca. Mobile-first. Rápido. Diseñado para convertir." },
+  { icon: "🤖", t: "Agente IA Incluido", s: "Responde cada lead en 3 segundos. Califica. Agenda. 24/7." },
+  { icon: "⚡", t: "Live en 24 Horas", s: "Tú das la info. Nosotros construimos. Tu IA va live mañana." },
 ];
 
-const PILLS = ["✓ Custom domain", "✓ GHL integrated", "✓ AI agent live", "✓ Zero maintenance"];
+const PILLS = ["✓ Dominio personalizado", "✓ GHL integrado", "✓ Agente IA live", "✓ Cero mantenimiento"];
 
 export default function PremiumAddon() {
   return (
@@ -18,15 +18,15 @@ export default function PremiumAddon() {
             ✦ Premium Add-on
           </div>
           <h2 className="ttl" style={{ fontSize: "clamp(36px,5vw,64px)" }}>
-            Premium Website
+            Website Premium
             <br />
-            + AI Agent.
+            + Agente IA.
             <br />
-            Delivered in 24hrs.
+            Entregado en 24hrs.
           </h2>
           <p className="sub">
-            Your brand. Your voice. A site built to convert — with an AI agent that
-            handles every lead from day one.
+            Tu marca. Tu voz. Un sitio construido para convertir — con un agente de IA
+            que maneja cada lead desde el día uno.
           </p>
         </Reveal>
 

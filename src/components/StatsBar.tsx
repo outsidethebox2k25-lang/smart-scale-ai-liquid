@@ -2,10 +2,10 @@ import GlassCard from "./GlassCard";
 import Reveal from "./Reveal";
 
 const STATS = [
-  { n: "3s", l: "Response time" },
-  { n: "100%", l: "Automated" },
-  { n: "24/7", l: "Always on" },
-  { n: "0", l: "Manual work" },
+  { n: "3s", l: "Tiempo de respuesta" },
+  { n: "100%", l: "Automatizado" },
+  { n: "24/7", l: "Siempre activo" },
+  { n: "0", l: "Trabajo manual" },
 ];
 
 export default function StatsBar() {

@@ -6,14 +6,14 @@ import WBar from "./WBar";
 import ChatAnimation, { type ChatItem } from "./ChatAnimation";
 
 const SMS_CHAT: ChatItem[] = [
-  { kind: "in", text: "Saw your ad. Are you still available?", t: 0 },
+  { kind: "in", text: "Vi tu anuncio. ¿Sigues disponible?", t: 0 },
   { kind: "typing", t: 700 },
-  { kind: "green", text: "Hey! Yes — what's the address for your quote?", t: 1500 },
-  { kind: "tag", text: "SMS AI · 3 sec", t: 1500 },
+  { kind: "green", text: "¡Hola! Sí — ¿cuál es tu dirección para la cotización?", t: 1500 },
+  { kind: "tag", text: "SMS AI · 3 seg", t: 1500 },
   { kind: "in", text: "4821 Maple Ave, Las Vegas", t: 2600 },
   { kind: "typing", t: 3300 },
-  { kind: "green", text: "Booked for Friday 9am! See you there 📅", t: 4100 },
-  { kind: "tag", text: "SMS AI · auto-booked ✓", t: 4100 },
+  { kind: "green", text: "¡Agendado viernes 9am! Ahí estamos 📅", t: 4100 },
+  { kind: "tag", text: "SMS AI · auto-agendado ✓", t: 4100 },
 ];
 
 export default function CrmSms() {
@@ -25,15 +25,15 @@ export default function CrmSms() {
           <div className="copy-col">
             <div className="copy-tag">Scale CRM AI</div>
             <h2 className="copy-h">
-              Every lead.
+              Cada lead.
               <br />
-              Every stage.
+              Cada etapa.
               <br />
-              Tracked.
+              Rastreado.
             </h2>
             <p className="copy-s">
-              Pipeline intelligence — automated from day one. See every deal move in
-              real time, without lifting a finger.
+              Inteligencia de pipeline — automatizada desde el día uno. Mira cada deal
+              moverse en tiempo real, sin mover un dedo.
             </p>
           </div>
           <Reveal delay={0.2}>
@@ -42,7 +42,7 @@ export default function CrmSms() {
               <div className="wbody">
                 <div className="cicon">🗂</div>
                 <div className="clabel">Scale CRM AI</div>
-                <div className="ctitle">Pipeline in real time.</div>
+                <div className="ctitle">Pipeline en tiempo real.</div>
                 <div>
                   <div className="sr">
                     <span className="sk">
@@ -56,24 +56,24 @@ export default function CrmSms() {
                       <span className="dot" style={{ background: "#ff6432", width: 8, height: 8 }} />
                       Mike L.
                     </span>
-                    <span className="sv" style={{ color: "rgba(255,100,50,.92)" }}>Hot lead</span>
+                    <span className="sv" style={{ color: "rgba(255,100,50,.92)" }}>Lead caliente</span>
                   </div>
                   <div className="sr">
                     <span className="sk">Pipeline</span>
                     <span className="sv">47 leads</span>
                   </div>
                   <div className="sr">
-                    <span className="sk">AI follow-up</span>
-                    <span className="sv" style={{ color: "rgba(90,200,255,.92)" }}>sent · 2m ago</span>
+                    <span className="sk">Seguimiento IA</span>
+                    <span className="sv" style={{ color: "rgba(90,200,255,.92)" }}>enviado · hace 2m</span>
                   </div>
                   <div className="sr">
-                    <span className="sk">Booked today</span>
-                    <span className="sv">12 calls</span>
+                    <span className="sk">Agendados hoy</span>
+                    <span className="sv">12 llamadas</span>
                   </div>
                 </div>
                 <div className="cbadge">
                   <span className="dot pulse" style={{ background: "#28e082", width: 7, height: 7 }} />
-                  Live · 0 errors
+                  Live · 0 errores
                 </div>
               </div>
             </GlassCard>
@@ -87,15 +87,15 @@ export default function CrmSms() {
           <div className="copy-col">
             <div className="copy-tag">Scale SMS AI</div>
             <h2 className="copy-h">
-              Reply before
+              Responde
               <br />
-              they forget
+              antes de que
               <br />
-              about you.
+              te olviden.
             </h2>
             <p className="copy-s">
-              3 seconds. Every lead. Day or night — your AI replies, qualifies, and
-              books. You just show up.
+              3 segundos. Cada lead. Día o noche — tu IA responde, califica y agenda.
+              Tú solo apareces.
             </p>
           </div>
           <Reveal delay={0.2}>
@@ -105,9 +105,9 @@ export default function CrmSms() {
                 <div className="cicon">💬</div>
                 <div className="clabel">Scale SMS AI</div>
                 <div className="ctitle">
-                  Auto-replies.
+                  Auto-responde.
                   <br />
-                  Auto-books.
+                  Auto-agenda.
                 </div>
                 <ChatAnimation items={SMS_CHAT} />
               </div>

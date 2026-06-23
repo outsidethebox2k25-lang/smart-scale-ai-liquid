@@ -13,25 +13,25 @@ export default function Hero() {
   return (
     <div className="hero">
       <motion.div className="hero-eye" {...up(0.2)}>
-        Introducing Smart Scale AI
+        Presentamos Smart Scale AI
       </motion.div>
 
       <motion.h1 className="hero-h" {...up(0.4)}>
-        The AI system that
+        El sistema de IA que
         <br />
-        runs your business.
+        opera tu negocio.
       </motion.h1>
 
       <motion.p className="hero-sub" {...up(0.6)}>
-        AI agents that capture, qualify, and close — while you work.
+        Agentes de IA que captan, califican y cierran — mientras tú trabajas.
       </motion.p>
 
       <motion.div className="hero-btns" {...up(0.8)}>
         <a href="#contact" className="btn-p">
-          Get your free demo →
+          Obtén tu demo gratis →
         </a>
         <a href="#product" className="btn-s">
-          See how it works
+          Mira cómo funciona
         </a>
       </motion.div>
 
@@ -40,7 +40,7 @@ export default function Hero() {
       </motion.div>
 
       <motion.div className="scroll-cue" {...up(1.6)}>
-        <span>Scroll</span>
+        <span>Desliza</span>
         <div className="scroll-bar" />
       </motion.div>
     </div>

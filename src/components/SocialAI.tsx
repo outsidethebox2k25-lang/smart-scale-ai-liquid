@@ -6,25 +6,25 @@ import WBar from "./WBar";
 import ChatAnimation, { type ChatItem } from "./ChatAnimation";
 
 const FB_CHAT: ChatItem[] = [
-  { kind: "in", text: "I'm interested in your roofing service", t: 0 },
+  { kind: "in", text: "Me interesa tu servicio de techos", t: 0 },
   { kind: "typing", t: 600 },
-  { kind: "green", text: "Hey! What's your zip code?", t: 1400 },
-  { kind: "tag", text: "FB AI · 2 sec", t: 1400 },
+  { kind: "green", text: "¡Hey! ¿Cuál es tu código postal?", t: 1400 },
+  { kind: "tag", text: "FB AI · 2 seg", t: 1400 },
   { kind: "in", text: "89052 — Henderson, NV", t: 2400 },
   { kind: "typing", t: 3100 },
-  { kind: "green", text: "Booked Thu 2pm! See you there 🔥", t: 3900 },
-  { kind: "tag", text: "FB AI · auto-booked ✓", t: 3900 },
+  { kind: "green", text: "¡Jue 2pm agendado! Ahí nos vemos 🔥", t: 3900 },
+  { kind: "tag", text: "FB AI · auto-agendado ✓", t: 3900 },
 ];
 
 const IG_CHAT: ChatItem[] = [
-  { kind: "in", text: "How much to remodel a kitchen? 🔥", t: 0 },
+  { kind: "in", text: "¿Cuánto cuesta remodelar la cocina? 🔥", t: 0 },
   { kind: "typing", t: 700 },
-  { kind: "green", text: "$15k–$40k. Want a free quote?", t: 1500 },
-  { kind: "tag", text: "IG AI · 4 sec", t: 1500 },
-  { kind: "in", text: "Yes! San Diego area", t: 2500 },
+  { kind: "green", text: "$15k–$40k. ¿Quieres cotización gratis?", t: 1500 },
+  { kind: "tag", text: "IG AI · 4 seg", t: 1500 },
+  { kind: "in", text: "¡Sí! Zona San Diego", t: 2500 },
   { kind: "typing", t: 3100 },
-  { kind: "green", text: "Link sent. See you Friday! ✅", t: 3900 },
-  { kind: "tag", text: "IG AI · auto-booked ✓", t: 3900 },
+  { kind: "green", text: "Link enviado. ¡Nos vemos el vier! ✅", t: 3900 },
+  { kind: "tag", text: "IG AI · auto-agendado ✓", t: 3900 },
 ];
 
 export default function SocialAI() {
@@ -47,7 +47,7 @@ export default function SocialAI() {
           <h2 className="ttl">
             Facebook. Instagram.
             <br />
-            Closed. Automatically.
+            Cerrado. Automáticamente.
           </h2>
         </Reveal>
 
@@ -57,7 +57,7 @@ export default function SocialAI() {
             <div className="wbody">
               <div className="cicon">👍</div>
               <div className="clabel">Scale FB AI</div>
-              <div className="ctitle">Facebook closes itself</div>
+              <div className="ctitle">Facebook se cierra solo</div>
               <ChatAnimation items={FB_CHAT} />
             </div>
           </GlassCard>
@@ -67,7 +67,7 @@ export default function SocialAI() {
             <div className="wbody">
               <div className="cicon">📸</div>
               <div className="clabel">Scale IG AI</div>
-              <div className="ctitle">They comment → Booked</div>
+              <div className="ctitle">Comentan → Agendado</div>
               <ChatAnimation items={IG_CHAT} />
             </div>
           </GlassCard>
